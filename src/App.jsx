@@ -23,7 +23,7 @@ import {
 // ==============================
 const BRAND = {
   name: "The Vista",
-  tagline: "Your private summer escape in Khairagali",
+  tagline: "Own your peace, in the peaks - Khairagali",
   primary: "from-sky-900 to-slate-800",
   accent: "bg-emerald-600",
   email: "info@thevista.pk",
@@ -307,3 +307,4 @@ export default function App() {
     </div>
   );
 }
+
