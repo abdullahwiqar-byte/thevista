@@ -205,54 +205,50 @@ export default function App() {
         </Fade>
       </section>
 
-      {/* Residences */}
-      <section id="residences" className="bg-slate-50 border-y border-slate-200">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
-          <Fade><h2 className="text-3xl md:text-4xl font-bold tracking-tight">Residences</h2></Fade>
-          <div className="mt-10 grid md:grid-cols-3 gap-6">
-            {RESIDENCE_TYPES.map((r, i) => (
-              <Fade key={r.name} delay={0.1 + i * 0.06}>
-                <div className="rounded-2xl border border-slate-200 p-6 bg-white">
-                  <div className="font-semibold">{r.name}</div>
-                  <div className="mt-1 text-sm text-emerald-700">{r.size}</div>
-                  <ul className="mt-4 space-y-2 text-sm text-slate-600 list-disc list-inside">
-                    <li>{r.blurb}</li>
-                    {r.bullets?.map((b, j) => <li key={j}>{b}</li>)}
-                  </ul>
-                </div>
-              </Fade>
-            ))}
-          </div>
+     {/* Residences */}
+<section id="residences" className="bg-slate-50 border-y border-slate-200">
+  <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
+    {/* Residences Heading */}
+    <Fade>
+      <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Residences</h2>
+    </Fade>
 
-          <div className="mt-10 grid md:grid-cols-3 gap-6">
-            {GALLERY.map((g, i) => (
-              <Fade key={g.title} delay={0.2 + i * 0.06}>
-                <div className="rounded-2xl border border-slate-200 p-6 bg-white">
-                  <div className="font-semibold">{g.title}</div>
-                  <ul className="mt-4 space-y-2 text-sm text-slate-600 list-disc list-inside">
-                    {g.points.map((p, j) => (<li key={j}>{p}</li>))}
-                  </ul>
-                </div>
-              </Fade>
-            ))}
+    {/* Residences Grid */}
+    <div className="mt-10 grid md:grid-cols-3 gap-6">
+      {RESIDENCE_TYPES.map((r, i) => (
+        <Fade key={r.name} delay={0.1 + i * 0.06}>
+          <div className="rounded-2xl border border-slate-200 p-6 bg-white">
+            <div className="font-semibold">{r.name}</div>
+            <div className="mt-1 text-sm text-emerald-700">{r.size}</div>
+            <ul className="mt-4 space-y-2 text-sm text-slate-600 list-disc list-inside">
+              <li>{r.blurb}</li>
+              {r.bullets?.map((b, j) => <li key={j}>{b}</li>)}
+            </ul>
           </div>
-        </div>
-      </section>
+        </Fade>
+      ))}
+    </div> {/* closes residences grid */}
 
-      {/* Amenities */}
-      <section id="amenities" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
-        <Fade><h2 className="text-3xl md:text-4xl font-bold tracking-tight">Amenities</h2></Fade>
-        <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {HIGHLIGHTS.map((h, i) => (
-            <Fade key={h.title} delay={0.1 + i * 0.05}>
-              <div className="group rounded-2xl border border-slate-200 p-6 hover:shadow-sm transition-shadow bg-white">
-                <h.icon className="h-6 w-6" />
-                <div className="mt-4 font-semibold">{h.title}</div>
-              </div>
-            </Fade>
-          ))}
-        </div>
-      </section>
+    {/* Building Features */}
+    <Fade>
+      <h3 className="mt-16 text-2xl font-semibold tracking-tight">Building Features</h3>
+    </Fade>
+
+    {/* Features Grid */}
+    <div className="mt-6 grid md:grid-cols-3 gap-6">
+      {GALLERY.map((g, i) => (
+        <Fade key={g.title} delay={0.1 + i * 0.06}>
+          <div className="rounded-2xl border border-slate-200 p-6 bg-white">
+            <div className="font-semibold">{g.title}</div>
+            <ul className="mt-4 space-y-2 text-sm text-slate-600 list-disc list-inside">
+              {g.points.map((p, j) => (<li key={j}>{p}</li>))}
+            </ul>
+          </div>
+        </Fade>
+      ))}
+    </div> {/* closes features grid */}
+  </div> {/* closes max-width container */}
+</section> {/* closes entire residences section */}
 
       {/* Pricing */}
       <section id="pricing" className="bg-slate-900 text-white">
@@ -348,6 +344,7 @@ export default function App() {
     </div>
   );
 }
+
 
 
 
