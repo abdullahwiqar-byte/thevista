@@ -62,51 +62,48 @@ const RESIDENCE_TYPES = [
     size: "480–880 sq ft",
     blurb: "Compact, elegant layouts designed for efficiency and style.",
     bullets: [
-      "Bay window with valley view",
-      "Compact galley kitchen",
-      "Built-in wardrobe"
+      "Scenic mountain views from thoughtfully positioned windows.",
+      "Premium finishes with modern fixtures throughout."
     ],
   },
   {
     name: "1 Bedroom",
     size: "770–1,120 sq ft",
-    blurb: "Private bedroom, smart living core.",
+    blurb: "Smart, open-plan designs with defined living zones.",
     bullets: [
-      "Open-plan living + dining",
-      "Separate laundry niche",
-      "Optional balcony"
+      "Expansive windows framing valley and forest views.",
+      "Crafted interiors using durable, high-quality materials."
     ],
   },
   {
     name: "2 Bedroom",
     size: "930–1,950 sq ft",
-    blurb: "Comfortable for small families.",
+    blurb: "Ideal for families or long-term retreats.",
     bullets: [
-      "Split bedrooms for privacy",
-      "U-shaped kitchen with breakfast ledge",
-      "Guest powder room"
+      "Dual-aspect views and spacious balconies in select units.",
+      "Superior finishing and sound insulation for quiet comfort."
     ],
   },
   {
     name: "3 Bedroom",
     size: "1,590–2,100+ sq ft",
-    blurb: "Expansive layouts and better views.",
+    blurb: "Expansive homes designed for privacy and togetherness.",
     bullets: [
-      "Dual-aspect living room",
-      "Master suite with walk-in",
-      "Terrace or extended balcony"
+      "Generous living areas opening to panoramic vistas.",
+      "Refined detailing with high-end fittings and fixtures."
     ],
-    {
+  },
+  {
     name: "4 Bedroom",
-    size: "1,600–3,100 sq ft",
-    blurb: "Comfortable for small families.",
+    size: "1,600–3,100+ sq ft",
+    blurb: "Large family residences built for luxury and entertaining.",
     bullets: [
-      "Split bedrooms for privacy",
-      "U-shaped kitchen with breakfast ledge",
-      "Guest powder room"
+      "Terrace and corner layouts offering the best views in the building.",
+      "Premium construction, top-grade finishes, and enduring craftsmanship."
     ],
   },
 ];
+
 
 const GALLERY = [
   { title: "Elevation Concept", points: ["Modern mountain façade", "Wide rooftop", "Wind-rated parapets"] },
@@ -368,6 +365,7 @@ export default function App() {
     </div>
   );
 }
+
 
 
 
