@@ -105,7 +105,7 @@ export default function App() {
             <img
             src="/logo.png"
             alt="The Vista logo"
-            className="h-24 w-auto absolute top-8 right-8 drop-shadow-lg"            
+            className="h-56 w-auto absolute top-8 right-8 drop-shadow-lg"            
             />
           <Fade><h1 className="text-5xl md:text-6xl font-black tracking-tight">The Vista — Khairagali</h1></Fade>
           <Fade delay={0.1}>
@@ -312,6 +312,7 @@ export default function App() {
     </div>
   );
 }
+
 
 
 
