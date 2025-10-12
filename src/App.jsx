@@ -59,8 +59,8 @@ const HIGHLIGHTS = [
 const RESIDENCE_TYPES = [
   {
     name: "Studio",
-    size: "450–550 sq ft",
-    blurb: "Efficient footprint for weekenders.",
+    size: "480–880 sq ft",
+    blurb: "Compact, elegant layouts designed for efficiency and style.",
     bullets: [
       "Bay window with valley view",
       "Compact galley kitchen",
@@ -69,7 +69,7 @@ const RESIDENCE_TYPES = [
   },
   {
     name: "1 Bedroom",
-    size: "600–750 sq ft",
+    size: "770–1,120 sq ft",
     blurb: "Private bedroom, smart living core.",
     bullets: [
       "Open-plan living + dining",
@@ -79,7 +79,7 @@ const RESIDENCE_TYPES = [
   },
   {
     name: "2 Bedroom",
-    size: "900–1100 sq ft",
+    size: "930–1,950 sq ft",
     blurb: "Comfortable for small families.",
     bullets: [
       "Split bedrooms for privacy",
@@ -88,14 +88,24 @@ const RESIDENCE_TYPES = [
     ],
   },
   {
-    name: "3 Bedroom & Penthouses",
-    size: "1300–1800+ sq ft",
+    name: "3 Bedroom",
+    size: "1,590–2,100+ sq ft",
     blurb: "Expansive layouts and better views.",
     bullets: [
       "Dual-aspect living room",
       "Master suite with walk-in",
       "Terrace or extended balcony"
     ],
+    {
+    name: "4 Bedroom",
+    size: "1,600–3,100 sq ft",
+    blurb: "Comfortable for small families.",
+    bullets: [
+      "Split bedrooms for privacy",
+      "U-shaped kitchen with breakfast ledge",
+      "Guest powder room"
+    ],
+  },
   },
 ];
 
@@ -359,6 +369,7 @@ export default function App() {
     </div>
   );
 }
+
 
 
 
