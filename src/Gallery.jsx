@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Fade } from "react-awesome-reveal";
+import { Fade, Zoom, Slide } from 'react-awesome-reveal';
 
 export default function Gallery() {
   const images = [
