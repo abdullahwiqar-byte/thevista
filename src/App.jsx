@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import {
   Mountain,
   MapPin,
@@ -134,14 +135,20 @@ export default function App() {
               <div className="text-xs text-slate-500 -mt-0.5">{BRAND.tagline}</div>
             </div>
           </a>
-          <nav className="flex items-center gap-4 md:gap-8 text-sm flex-wrap">
-          {NAV.map(n => (
-            <a key={n.href} href={n.href} className="shrink-0 text-slate-600 hover:text-slate-900">
+         <nav className="flex items-center gap-4 md:gap-8 text-sm flex-wrap">
+         {NAV.map(n => {
+        const isRoute = n.href.startsWith("/"); // e.g. "/gallery"
+        return isRoute ? (
+        <Link key={n.href} to={n.href} className="shrink-0 text-slate-600 hover:text-slate-900">
+          {n.label}
+          </Link>
+          ) : (
+          <a key={n.href} href={n.href} className="shrink-0 text-slate-600 hover:text-slate-900">
             {n.label}
-            </a>
-          ))}
-          </nav>
-
+          </a>
+          );
+        })}
+    </nav>
             <a href="#contact" className={`hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-xl text-white ${BRAND.accent} shadow-sm hover:opacity-90`}>
             <ArrowRight className="h-4 w-4" /> Register Interest
           </a>
@@ -414,6 +421,7 @@ export default function App() {
     </div>
   );
 }
+
 
 
 
