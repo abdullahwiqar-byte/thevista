@@ -105,7 +105,7 @@ export default function App() {
           <Fade><h1 className="text-5xl md:text-6xl font-black tracking-tight">The Vista — Khairagali</h1></Fade>
           <Fade delay={0.1}>
             <p className="mt-6 text-lg sm:text-xl text-slate-200 max-w-2xl">
-              72 modern mountain apartments across 12 floors with underground parking, rooftop BBQ, and an in-building prayer room.
+              72 modern mountain apartments across 12 floors with underground parking, expansive rooftop, and an in-building prayer room.
             </p>
           </Fade>
         </div>
@@ -131,7 +131,7 @@ export default function App() {
           <div>
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Location</h2>
             <p className="mt-3 text-slate-600 max-w-2xl">
-              Slightly hidden from the main road for peace and privacy, yet central enough to be your base camp for Galiyat.
+              Off the main road for peace and privacy, yet central enough to be your base camp for Galiyat.
             </p>
             <ul className="mt-6 space-y-3 text-slate-700">
               <li className="flex items-center gap-3"><MapPin className="h-5 w-5" /> ~30 minutes from Murree</li>
@@ -149,7 +149,7 @@ export default function App() {
             </p>
             <div className="mt-4 grid grid-cols-3 gap-3 text-center">
               {[
-                { label: "Altitude", value: "~2,000 m" },
+                { label: "Altitude", value: "~7,700 ft" },
                 { label: "Road", value: "Paved + grade" },
                 { label: "Snow", value: "Seasonal" },
               ].map((x, i) => (
@@ -307,4 +307,5 @@ export default function App() {
     </div>
   );
 }
+
 
