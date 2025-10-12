@@ -237,7 +237,7 @@ export default function App() {
 
     {/* Building Features */}
     <Fade>
-      <h2 className="mt-16 text-2xl font-semibold tracking-tight">Building Features</h2>
+      <h2 className="mt-16 text-3xl md:text-4xl font-bold tracking-tight">Building Features</h2>
     </Fade>
 
     {/* Features Grid */}
@@ -365,6 +365,7 @@ export default function App() {
     </div>
   );
 }
+
 
 
 
