@@ -38,6 +38,7 @@ const NAV = [
   { label: "Amenities", href: "#amenities" },
   { label: "Pricing", href: "#pricing" },
   { label: "Contact", href: "#contact" },
+  { label: "Gallery", href: "/gallery" },
 ];
 
 const STATS = [
@@ -413,6 +414,7 @@ export default function App() {
     </div>
   );
 }
+
 
 
 
