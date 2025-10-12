@@ -24,7 +24,7 @@ import {
 const BRAND = {
   name: "The Vista",
   tagline: "Own your peace, in the peaks - Khairagali",
-  primary: "from-emerald-800 to-emerald-600",
+  primary: "from-[#2C5530] to-[#618264]",
   accent: "bg-emerald-600",
   email: "info@thevista.pk",
   phone: "+92 321 488 2238",
@@ -314,6 +314,7 @@ export default function App() {
     </div>
   );
 }
+
 
 
 
