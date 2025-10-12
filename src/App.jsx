@@ -27,7 +27,7 @@ const BRAND = {
   primary: "from-[#2C5530] to-[#618264]",
   accent: "bg-emerald-600",
   email: "info@thevista.pk",
-  phone: "+92 321 488 2238",
+  phone: "+92 332 893 6966",
   address: "Khairagali, Galiyat Region, Pakistan",
 };
 
@@ -307,7 +307,7 @@ export default function App() {
               <p className="mt-3 text-slate-600">Sales & information</p>
               <div className="mt-6 space-y-3 text-slate-700">
                 <div className="flex items-center gap-3"><Mail className="h-5 w-5" /> {BRAND.email}</div>
-                <div className="flex items-center gap-3"><Phone className="h-5 w-5" /> {BRAND.phone} (Abdullah Waqar)</div>
+                <div className="flex items-center gap-3"><Phone className="h-5 w-5" /> {BRAND.phone} (Zill-e-Humah)</div>
                 <div className="flex items-center gap-3"><MapPin className="h-5 w-5" /> {BRAND.address}</div>
               </div>
             </div>
@@ -365,6 +365,7 @@ export default function App() {
     </div>
   );
 }
+
 
 
 
