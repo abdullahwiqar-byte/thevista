@@ -126,7 +126,7 @@ export default function App() {
     <div className="min-h-screen bg-white text-slate-900">
       {/* Navbar */}
       <header className="sticky top-0 z-30 backdrop-blur bg-white/70 border-b border-slate-200">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-3 flex flex-wrap items-center gap-x-6 gap-y-2 justify-between">
           <a href="#home" className="flex items-center gap-3">
             <img src="/logo.png" alt="The Vista logo" className="h-10 w-auto" />
             <div>
@@ -136,13 +136,13 @@ export default function App() {
           </a>
           <nav className="flex items-center gap-4 md:gap-8 text-sm flex-wrap">
           {NAV.map(n => (
-            <a key={n.href} href={n.href} className="text-slate-600 hover:text-slate-900">
+            <a key={n.href} href={n.href} className="shrink-0 text-slate-600 hover:text-slate-900">
             {n.label}
             </a>
           ))}
           </nav>
 
-          <a href="#contact" className={`hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-xl text-white ${BRAND.accent} shadow-sm hover:opacity-90`}>
+            <a href="#contact" className={`hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-xl text-white ${BRAND.accent} shadow-sm hover:opacity-90`}>
             <ArrowRight className="h-4 w-4" /> Register Interest
           </a>
         </div>
@@ -414,6 +414,7 @@ export default function App() {
     </div>
   );
 }
+
 
 
 
