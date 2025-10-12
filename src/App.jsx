@@ -278,8 +278,8 @@ export default function App() {
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Pricing</h2>
             <p className="mt-3 text-slate-300">From <span className="font-semibold">Rs. 20,000 / sq. ft.</span> Final prices vary by floor, exposure, and plan.</p>
           </Fade>
-          <div className="mt-10 grid md:grid-cols-3 gap-6">
-            {["Shell & Core", "Semi-Furnished", "Penthouse"].map((tier, i) => (
+          <div className="mt-10 grid md:grid-cols-2 gap-6 justify-center">
+            {["Shell & Core", "Semi-Furnished"].map((tier, i) => (
               <Fade key={tier} delay={0.1 + i * 0.06}>
                 <div className="rounded-2xl border border-white/15 p-6 bg-white/5">
                   <div className="font-semibold">{tier}</div>
@@ -365,6 +365,7 @@ export default function App() {
     </div>
   );
 }
+
 
 
 
