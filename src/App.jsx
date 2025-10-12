@@ -84,7 +84,7 @@ export default function App() {
       <header className="sticky top-0 z-30 backdrop-blur bg-white/70 border-b border-slate-200">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           <a href="#home" className="flex items-center gap-3">
-            <img src="/logo.png" alt="The Vista logo" className="h-10 w-auto" />
+            <div className={`h-9 w-9 rounded-xl bg-gradient-to-tr ${BRAND.primary} grid place-items-center text-white font-bold`}>V</div>
             <div>
               <div className="font-semibold tracking-tight">{BRAND.name}</div>
               <div className="text-xs text-slate-500 -mt-0.5">{BRAND.tagline}</div>
