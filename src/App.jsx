@@ -106,7 +106,6 @@ const RESIDENCE_TYPES = [
       "Guest powder room"
     ],
   },
-  },
 ];
 
 const GALLERY = [
@@ -369,6 +368,7 @@ export default function App() {
     </div>
   );
 }
+
 
 
 
