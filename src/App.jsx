@@ -250,6 +250,21 @@ export default function App() {
   </div> {/* closes max-width container */}
 </section> {/* closes entire residences section */}
 
+       {/* Amenities */}
+      <section id="amenities" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
+        <Fade><h2 className="text-3xl md:text-4xl font-bold tracking-tight">Amenities</h2></Fade>
+        <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {HIGHLIGHTS.map((h, i) => (
+            <Fade key={h.title} delay={0.1 + i * 0.05}>
+              <div className="group rounded-2xl border border-slate-200 p-6 hover:shadow-sm transition-shadow bg-white">
+                <h.icon className="h-6 w-6" />
+                <div className="mt-4 font-semibold">{h.title}</div>
+              </div>
+            </Fade>
+          ))}
+        </div>
+      </section>
+
       {/* Pricing */}
       <section id="pricing" className="bg-slate-900 text-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
@@ -344,6 +359,7 @@ export default function App() {
     </div>
   );
 }
+
 
 
 
