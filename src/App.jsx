@@ -57,11 +57,46 @@ const HIGHLIGHTS = [
 ];
 
 const RESIDENCE_TYPES = [
-  { name: "Studio", size: "480-880 sq ft", blurb: "Compact living, crafted for comfort." },
-  { name: "1 Bedroom", size: "770–1120 sq ft", blurb: "Efficient footprints with big views." },
-  { name: "2 Bedroom", size: "930–1950 sq ft", blurb: "Ideal for small families and long stays." },
-  { name: "3 Bedroom", size: "1590–2100+ sq ft", blurb: "Spacious three-bedroom layouts built for comfort and connection." },
-  { name: "4 Bedroom", size: "1600–3100+ sq ft", blurb: "Generous four-bedroom residences offering abundant space for family living and entertaining." },
+  {
+    name: "Studio",
+    size: "450–550 sq ft",
+    blurb: "Efficient footprint for weekenders.",
+    bullets: [
+      "Bay window with valley view",
+      "Compact galley kitchen",
+      "Built-in wardrobe"
+    ],
+  },
+  {
+    name: "1 Bedroom",
+    size: "600–750 sq ft",
+    blurb: "Private bedroom, smart living core.",
+    bullets: [
+      "Open-plan living + dining",
+      "Separate laundry niche",
+      "Optional balcony"
+    ],
+  },
+  {
+    name: "2 Bedroom",
+    size: "900–1100 sq ft",
+    blurb: "Comfortable for small families.",
+    bullets: [
+      "Split bedrooms for privacy",
+      "U-shaped kitchen with breakfast ledge",
+      "Guest powder room"
+    ],
+  },
+  {
+    name: "3 Bedroom & Penthouses",
+    size: "1300–1800+ sq ft",
+    blurb: "Expansive layouts and better views.",
+    bullets: [
+      "Dual-aspect living room",
+      "Master suite with walk-in",
+      "Terrace or extended balcony"
+    ],
+  },
 ];
 
 const GALLERY = [
@@ -182,8 +217,7 @@ export default function App() {
                   <div className="mt-1 text-sm text-emerald-700">{r.size}</div>
                   <ul className="mt-4 space-y-2 text-sm text-slate-600 list-disc list-inside">
                     <li>{r.blurb}</li>
-                    <li>Cross-ventilation where feasible</li>
-                    <li>Lift access and fire stairs</li>
+                    {r.bullets?.map((b, j) => <li key={j}>{b}</li>)}
                   </ul>
                 </div>
               </Fade>
@@ -314,6 +348,7 @@ export default function App() {
     </div>
   );
 }
+
 
 
 
