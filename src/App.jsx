@@ -134,13 +134,12 @@ export default function App() {
               <div className="text-xs text-slate-500 -mt-0.5">{BRAND.tagline}</div>
             </div>
           </a>
-         <nav className="hidden md:flex items-center gap-8 text-sm">
+          <nav className="flex items-center gap-8 text-sm">
           {NAV.map(n => (
             <a key={n.href} href={n.href} className="text-slate-600 hover:text-slate-900">
             {n.label}
             </a>
           ))}
-          <a href="/gallery" className="text-slate-600 hover:text-slate-900">Gallery</a>
           </nav>
 
           <a href="#contact" className={`hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-xl text-white ${BRAND.accent} shadow-sm hover:opacity-90`}>
@@ -408,12 +407,14 @@ export default function App() {
             <a href="#residences" className="hover:text-slate-900">Residences</a>
             <a href="#pricing" className="hover:text-slate-900">Pricing</a>
             <a href="#contact" className="hover:text-slate-900">Contact</a>
+            <a href="/gallery" className="hover:text-slate-900">Gallery</a>
           </div>
         </div>
       </footer>
     </div>
   );
 }
+
 
 
 
