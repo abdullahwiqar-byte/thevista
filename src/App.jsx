@@ -102,6 +102,11 @@ export default function App() {
       {/* Hero */}
       <section id="home" className={`relative bg-gradient-to-br ${BRAND.primary} text-white`}>
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-24">
+            <img
+            src="/logo.png"
+            alt="The Vista logo"
+            className="h-24 w-auto mb-6 mx-auto"
+            />
           <Fade><h1 className="text-5xl md:text-6xl font-black tracking-tight">The Vista — Khairagali</h1></Fade>
           <Fade delay={0.1}>
             <p className="mt-6 text-lg sm:text-xl text-slate-200 max-w-2xl">
@@ -307,6 +312,7 @@ export default function App() {
     </div>
   );
 }
+
 
 
 
