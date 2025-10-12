@@ -271,32 +271,74 @@ export default function App() {
         </div>
       </section>
 
-      {/* Pricing */}
-      <section id="pricing" className="bg-slate-900 text-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
-          <Fade>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Pricing</h2>
-            <p className="mt-3 text-slate-300">From <span className="font-semibold">Rs. 20,000 / sq. ft.</span> Final prices vary by floor, exposure, and plan.</p>
-          </Fade>
-          <div className="mt-10 grid md:grid-cols-2 gap-6 justify-center">
-            {["Shell & Core", "Semi-Furnished"].map((tier, i) => (
-              <Fade key={tier} delay={0.1 + i * 0.06}>
-                <div className="rounded-2xl border border-white/15 p-6 bg-white/5">
-                  <div className="font-semibold">{tier}</div>
-                  <ul className="mt-4 space-y-2 text-sm text-slate-200">
-                    <li className="flex gap-2 items-start"><CheckCircle2 className="h-5 w-5 text-emerald-400 mt-0.5" /> Mountain-oriented layouts</li>
-                    <li className="flex gap-2 items-start"><CheckCircle2 className="h-5 w-5 text-emerald-400 mt-0.5" /> Elevator & parking access</li>
-                    <li className="flex gap-2 items-start"><CheckCircle2 className="h-5 w-5 text-emerald-400 mt-0.5" /> Developer finishing options</li>
-                  </ul>
-                  <a href="#contact" className="mt-6 inline-flex w-full items-center justify-center gap-2 px-4 py-2 rounded-xl text-slate-900 bg-white hover:opacity-90">
-                    Request inventory <ArrowRight className="h-4 w-4" />
-                  </a>
-                </div>
-              </Fade>
-            ))}
-          </div>
+{/* Pricing */}
+<section id="pricing" className="bg-slate-900 text-white">
+  <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
+    <Fade>
+      <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Pricing</h2>
+      <p className="mt-3 text-slate-300">
+        From <span className="font-semibold">Rs. 20,000 / sq. ft.</span> Final prices vary by floor, exposure, and plan.
+      </p>
+    </Fade>
+
+    <div className="mt-10 grid md:grid-cols-2 gap-6 justify-center">
+      {/* Shell & Core */}
+      <Fade delay={0.1}>
+        <div className="rounded-2xl border border-white/15 p-6 bg-white/5">
+          <div className="font-semibold text-lg">Shell & Core</div>
+          <ul className="mt-4 space-y-2 text-sm text-slate-200">
+            <li className="flex gap-2 items-start">
+              <CheckCircle2 className="h-5 w-5 text-emerald-400 mt-0.5" />
+              Structural completion with external finishes and essential utilities
+            </li>
+            <li className="flex gap-2 items-start">
+              <CheckCircle2 className="h-5 w-5 text-emerald-400 mt-0.5" />
+              Plumbing, electrical, and HVAC provisions installed
+            </li>
+            <li className="flex gap-2 items-start">
+              <CheckCircle2 className="h-5 w-5 text-emerald-400 mt-0.5" />
+              Delivered ready for your custom interior fit-out
+            </li>
+          </ul>
+          <a
+            href="#contact"
+            className="mt-6 inline-flex w-full items-center justify-center gap-2 px-4 py-2 rounded-xl text-slate-900 bg-white hover:opacity-90"
+          >
+            Request inventory <ArrowRight className="h-4 w-4" />
+          </a>
         </div>
-      </section>
+      </Fade>
+
+      {/* Finished */}
+      <Fade delay={0.2}>
+        <div className="rounded-2xl border border-white/15 p-6 bg-white/5">
+          <div className="font-semibold text-lg">Finished</div>
+          <ul className="mt-4 space-y-2 text-sm text-slate-200">
+            <li className="flex gap-2 items-start">
+              <CheckCircle2 className="h-5 w-5 text-emerald-400 mt-0.5" />
+              Complete flooring, lighting, and painted walls
+            </li>
+            <li className="flex gap-2 items-start">
+              <CheckCircle2 className="h-5 w-5 text-emerald-400 mt-0.5" />
+              Modular kitchen fittings and installed bathrooms
+            </li>
+            <li className="flex gap-2 items-start">
+              <CheckCircle2 className="h-5 w-5 text-emerald-400 mt-0.5" />
+              Move-in ready comfort with scope for personalization
+            </li>
+          </ul>
+          <a
+            href="#contact"
+            className="mt-6 inline-flex w-full items-center justify-center gap-2 px-4 py-2 rounded-xl text-slate-900 bg-white hover:opacity-90"
+          >
+            Request inventory <ArrowRight className="h-4 w-4" />
+          </a>
+        </div>
+      </Fade>
+    </div>
+  </div>
+</section>
+
 
       {/* Contact */}
       <section id="contact" className="bg-slate-50 border-t border-slate-200">
@@ -365,6 +407,7 @@ export default function App() {
     </div>
   );
 }
+
 
 
 
