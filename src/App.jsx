@@ -226,7 +226,7 @@ export default function App() {
           <div className="rounded-2xl border border-slate-200 p-6 bg-white">
             <div className="font-semibold">{r.name}</div>
             <div className="mt-1 text-sm text-emerald-700">{r.size}</div>
-            <ul className="mt-4 space-y-2 text-sm text-slate-600 list-disc list-inside">
+              <ul className="mt-4 list-disc space-y-2 pl-6 text-sm text-slate-600">
               <li>{r.blurb}</li>
               {r.bullets?.map((b, j) => <li key={j}>{b}</li>)}
             </ul>
@@ -365,6 +365,7 @@ export default function App() {
     </div>
   );
 }
+
 
 
 
