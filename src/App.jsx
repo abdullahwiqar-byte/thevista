@@ -57,9 +57,11 @@ const HIGHLIGHTS = [
 ];
 
 const RESIDENCE_TYPES = [
-  { name: "1 Bedroom", size: "600–750 sq ft", blurb: "Efficient footprints with big views." },
-  { name: "2 Bedroom", size: "900–1100 sq ft", blurb: "Ideal for small families and long stays." },
-  { name: "3 Bedroom & Penthouses", size: "1300–1800+ sq ft", blurb: "Expansive layouts with terrace options." },
+  { name: "Studio", size: "480-880 sq ft", blurb: "Compact living, crafted for comfort." },
+  { name: "1 Bedroom", size: "770–1120 sq ft", blurb: "Efficient footprints with big views." },
+  { name: "2 Bedroom", size: "930–1950 sq ft", blurb: "Ideal for small families and long stays." },
+  { name: "3 Bedroom", size: "1590–2100+ sq ft", blurb: "Spacious three-bedroom layouts built for comfort and connection." },
+  { name: "4 Bedroom", size: "1600–3100+ sq ft", blurb: "Generous four-bedroom residences offering abundant space for family living and entertaining." },
 ];
 
 const GALLERY = [
@@ -312,6 +314,7 @@ export default function App() {
     </div>
   );
 }
+
 
 
 
