@@ -134,7 +134,7 @@ export default function App() {
               <div className="text-xs text-slate-500 -mt-0.5">{BRAND.tagline}</div>
             </div>
           </a>
-          <nav className="flex items-center gap-8 text-sm">
+          <nav className="flex items-center gap-4 md:gap-8 text-sm flex-wrap">
           {NAV.map(n => (
             <a key={n.href} href={n.href} className="text-slate-600 hover:text-slate-900">
             {n.label}
@@ -414,6 +414,7 @@ export default function App() {
     </div>
   );
 }
+
 
 
 
