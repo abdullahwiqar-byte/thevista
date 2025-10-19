@@ -110,6 +110,60 @@ const next = (e) => {
     </figure>
   </Fade>
 ))}
+            {/* Lightbox modal */}
+{index !== null && (
+  <div
+    className="fixed inset-0 z-50 bg-black/90 backdrop-blur-sm flex items-center justify-center p-4"
+    onClick={close}
+    role="dialog"
+    aria-modal="true"
+  >
+    {/* Close */}
+    <button
+      onClick={close}
+      className="absolute top-4 right-4 h-10 w-10 rounded-full bg-white/10 hover:bg-white/20 text-white text-2xl"
+      aria-label="Close"
+      title="Close (Esc)"
+    >
+      ×
+    </button>
+
+    {/* Prev / Next */}
+    {images.length > 1 && (
+      <>
+        <button
+          onClick={prev}
+          className="absolute left-3 md:left-6 top-1/2 -translate-y-1/2 h-11 w-11 rounded-full bg-white/10 hover:bg-white/20 text-white text-2xl"
+          aria-label="Previous"
+          title="Previous (←)"
+        >
+          ‹
+        </button>
+        <button
+          onClick={next}
+          className="absolute right-3 md:right-6 top-1/2 -translate-y-1/2 h-11 w-11 rounded-full bg-white/10 hover:bg-white/20 text-white text-2xl"
+          aria-label="Next"
+          title="Next (→)"
+        >
+          ›
+        </button>
+      </>
+    )}
+
+    {/* Image + caption */}
+    <div className="relative max-w-6xl w-[92vw]" onClick={(e) => e.stopPropagation()}>
+      <img
+        src={images[index].src}
+        alt={images[index].caption}
+        className="w-full max-h-[80vh] object-contain select-none rounded-xl"
+      />
+      <div className="mt-4 text-center text-slate-200 text-sm">
+        {images[index].caption}
+      </div>
+    </div>
+  </div>
+)}
+
           </div>
         </div>
       </section>
