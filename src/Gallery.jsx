@@ -83,9 +83,10 @@ export default function Gallery() {
                     className="w-full h-64 object-cover rounded-2xl border border-slate-200 bg-white shadow-sm transition-transform duration-300 hover:scale-[1.02]"
                   />
                 </a>
-                <figcaption className="mt-2 text-xs tracking-wide uppercase text-slate-500 text-center">
-                  {img.caption}
-                </figcaption>
+                <figcaption className="mt-3 text-[13px] font-medium tracking-wide text-center text-slate-700 italic">
+          {img.caption}
+      </figcaption>
+
               </figure>
             </Fade>
           ))}
