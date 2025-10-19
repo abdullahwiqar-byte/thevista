@@ -118,6 +118,8 @@ export default function Gallery() {
             {images.map((img, i) => (
               <Fade key={i} delay={0.05 * i}>
                 <figure className="relative group overflow-hidden rounded-2xl border border-slate-200 shadow-sm cursor-zoom-in">
+                onClick={() => open(i)}
+                  >
                   <img
                     src={img.src}
                     alt={img.caption}
