@@ -156,21 +156,19 @@ export default function App() {
       </header>
 
       {/* Hero */}
-      <section id="home" className={`relative bg-gradient-to-br ${BRAND.primary} text-white`}>
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-24">
-            <img
-            src="/logo.png"
-            alt="The Vista logo"
-            className="h-56 w-auto absolute top-12 right-8 drop-shadow-lg"            
-            />
-          <Fade><h1 className="text-5xl md:text-6xl font-black tracking-tight">The Vista — Khairagali</h1></Fade>
-          <Fade delay={0.1}>
-            <p className="mt-6 text-lg sm:text-xl text-slate-200 max-w-2xl">
-              72 modern mountain apartments across 12 floors with underground parking, expansive rooftop, and an in-building prayer room.
-            </p>
-          </Fade>
+        <section
+              id="home"
+              className="relative bg-cover bg-center bg-no-repeat text-white"
+              style={{
+              backgroundImage: "url('/hero.jpg')",
+              }}
+              >
+            <div className="relative bg-black/50 py-24">
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          ...
         </div>
-      </section>
+      </div>
+  </section>
 
       {/* Stats */}
       <section className="border-b border-slate-200 bg-slate-50">
@@ -421,6 +419,7 @@ export default function App() {
     </div>
   );
 }
+
 
 
 
