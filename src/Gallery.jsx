@@ -56,8 +56,37 @@ export default function Gallery() {
   const images = [
     { src: "/gallery6.jpg", caption: "The Vista façade — natural stone architecture blending classical symmetry with mountain modern design." },
     { src: "/gallery7.jpg", caption: "Open-plan dining and living — minimalist elegance with warm wooden tones." },
-    // ... continue your other image/caption pairs here
-  ];
+  { src: "/gallery8.jpg", caption: "Parking Entry and Driveway" },
+  { src: "/gallery9.jpg", caption: "Warm light, quiet evenings, and the mountain skyline beyond your window — comfort with a view" },
+  { src: "/gallery10.jpg", caption: "Clean lines, soft tones, and quiet efficiency — a kitchen made for calm mornings and slow evenings." },
+  { src: "/gallery11.jpg", caption: "Mountain lights outside, quiet comfort within." },
+  { src: "/gallery12.jpg", caption: "Modern elegance meets natural warmth — a space designed for calm and connection." },
+  { src: "/gallery13.jpg", caption: "Textured stone, soft light, and muted tones — a bedroom made for effortless calm." },
+  { src: "/gallery14.jpg", caption: "Soft greens, warm woods, and morning light — a bedroom that feels like quiet renewal." },
+  { src: "/gallery15.jpg", caption: "A living room made for quiet indulgence" },
+  { src: "/gallery16.jpg", caption: "An open living and dining space bathed in soft natural light" },
+  { src: "/gallery17.jpg", caption: "A refined corridor of calm" },
+  { src: "/gallery18.jpg", caption: "Open dining and kitchen space in soothing teal and natural light." },
+  { src: "/gallery19.jpg", caption: "Warm tones and modern art blend into a serene, inviting bedroom" },
+  { src: "/gallery20.jpg", caption: "Muted teal walls and wood tones frame a cozy transition into the bedroom." },
+  { src: "/gallery21.jpg", caption: "Modern kitchen in wood and marble tones, perfectly aligned with open living." },
+  { src: "/gallery22.jpg", caption: "A warm entryway opening into soft light and mountain views beyond." },
+  { src: "/gallery23.jpg", caption: "Open-concept living flows through warm wood and teal accents, framed by mountain light." },
+  { src: "/gallery24.jpg", caption: "A bedroom that feels both calm and alive" },
+  { src: "/gallery25.jpg", caption: "Soft lighting and rich textures define this bedroom of understated luxury." },
+  { src: "/gallery26.jpg", caption: "Curved sofas, modern art, and mountain views — a living room built for both style and serenity." },
+  { src: "/gallery27.jpg", caption: "Soft greens, textured art, and warm tones create a bedroom of quiet elegance." },
+  { src: "/gallery28.jpg", caption: "A sleek kitchen framed in warm wood and minimalist whites" },
+  { src: "/gallery29.jpg", caption: "Soft lighting, crafted shelving, and curated art create a refined living space." },
+  { src: "/gallery30.jpg", caption: "A serene bedroom framed by wood and texture" },
+  { src: "/gallery31.jpg", caption: "“Warm neutrals and dark contrasts give this bedroom a calm, grounded feel.”" },
+  { src: "/gallery32.jpg", caption: "Stone walls, soft lighting, and panoramic views — a bedroom that balances warmth and sophistication." },
+  { src: "/gallery33.jpg", caption: "Intimate lounge with bold contrasts, mountain views, and cinematic calm." },
+  { src: "/gallery34.jpg", caption: "A modern kitchen wrapped in warm oak tones and sleek marble finishes." },
+  { src: "/gallery35.jpg", caption: "A cozy retreat framed by textured stone and soft greys" },
+  { src: "/gallery37.jpg", caption: "An open layout blending stone, wood, and glass — elegant yet grounded." },
+  { src: "/gallery38.jpg", caption: "A restful bedroom framed by deep tones and mountain views" },
+  { src: "/gallery39.jpg", caption: "Expansive terrace views meet warm indoor elegance through glass and light." }  ];
 
   return (
     <>
@@ -67,13 +96,13 @@ export default function Gallery() {
       >
         <img
           src="/gallery-hero.jpg" // 👈 your chosen banner image (place in /public)
-          alt="The Vista gallery hero"
+          alt=""
           className="absolute inset-0 w-full h-full object-cover brightness-50"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
         <div className="relative z-10 px-4">
           <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight drop-shadow-lg">
-            Image Gallery
+            The Vista Experience
           </h1>
           <p className="mt-4 text-lg md:text-xl text-slate-100 max-w-2xl mx-auto drop-shadow">
             A visual journey through <span className="font-semibold text-emerald-300">The Vista</span> —  
