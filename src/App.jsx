@@ -155,61 +155,48 @@ export default function App() {
 
       {/* Hero */}
 
-      // REPLACE your current <section id="home">…</section> with this block
+      {/* Hero */}
+<section
+  id="home"
+  className="relative bg-cover bg-center bg-no-repeat text-white"
+  style={{ backgroundImage: "url('/hero.jpg')" }}
+>
+  <div className="absolute inset-0 bg-black/50" />
 
-<section id="home" className="relative bg-black scroll-mt-24">
-  {/* Fixed 16:9 stage so phone and desktop match exactly */}
-  <div className="relative w-full aspect-[16/9]">
-    {/* Banner image never crops */}
-    <img
-      src="/hero.jpg"
-      alt="The Vista — mountain panorama"
-      className="absolute inset-0 h-full w-full object-contain"
-      loading="eager"
-      decoding="async"
-    />
-
-    {/* Overlay layer */}
-    <div className="absolute inset-0">
-      {/* Text block in the same relative spot as desktop */}
-      <div
-        className="
-          absolute
-          [left:6%]
-          [top:18%]
-          max-w-[42%]
-          text-white drop-shadow-lg
-        "
-      >
-        <h1 className="font-black tracking-tight [font-size:clamp(22px,3.5vw,56px)] leading-[1.05]">
+  <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-28 md:py-32">
+    {/* grid keeps logo aligned with text */}
+    <div className="grid items-start gap-8 lg:grid-cols-[1fr_auto]">
+      {/* Left: Title + Tagline + Summary */}
+      <div>
+        <h1 className="text-5xl md:text-6xl font-black tracking-tight drop-shadow-lg">
           The Vista
         </h1>
-        <p className="mt-[1.2vw] text-slate-100 [font-size:clamp(14px,1.4vw,22px)]">
+        <p className="mt-3 text-lg sm:text-xl text-slate-100 drop-shadow-md">
           Own your peace, in the peaks – Khairagali
         </p>
-        <p className="mt-[2.2vw] text-slate-200 [font-size:clamp(13px,1.25vw,20px)]">
+        <p className="mt-8 text-lg sm:text-xl text-slate-200 max-w-2xl drop-shadow-md">
           72 modern mountain apartments across 12 floors with underground parking,
           expansive rooftop, and an in-building prayer room.
         </p>
       </div>
 
-      {/* Logo locked to the same relative corner */}
+      {/* Right: Logo (no absolute!) */}
       <img
         src="/logo.png"
         alt="The Vista logo"
         className="
-          absolute
-          [right:4%]
-          [bottom:6%]
-          w-[12vw]
-          max-w-[220px]
-          min-w-[80px]
+          absolute right-4 bottom-4 sm:right-6 sm:bottom-6
+          w-20                        /* base size for mobile */
+          sm:w-28 md:w-36 lg:w-44     /* scales up on bigger screens */
+          max-w-[30vw]                /* prevents oversize on huge displays */
           drop-shadow-lg
+          transition-all duration-300 /* smooth resizing */
         "
       />
     </div>
   </div>
 </section>
+
 
       {/* Stats */}
       <section className="border-b border-slate-200 bg-slate-50">
@@ -475,6 +462,7 @@ export default function App() {
     </div>
   );
 }
+
 
 
 
