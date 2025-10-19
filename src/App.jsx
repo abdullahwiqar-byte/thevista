@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { FileDown } from "lucide-react";
 import {
   Mountain,
   MapPin,
@@ -249,6 +250,21 @@ export default function App() {
     <Fade>
       <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Residences</h2>
     </Fade>
+{/* Residences PDF download */}
+<div className="mt-4">
+  <a
+    href="/thevistafloorplans.pdf"
+    download
+    type="application/pdf"
+    className="inline-flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-900 hover:bg-slate-50"
+  >
+    {/* If you want an icon, import FileDown at the top and uncomment the line below */}
+    /* <FileDown className="h-4 w-4" /> */
+    Download residences floorplans (PDF)
+  </a>
+  {/* Optional file size note */}
+  {/* <span className="ml-3 text-xs text-slate-500">~3.2 MB</span> */}
+</div>
 
     {/* Residences Grid */}
     <div className="mt-10 grid md:grid-cols-3 gap-6">
@@ -439,6 +455,7 @@ export default function App() {
     </div>
   );
 }
+
 
 
 
