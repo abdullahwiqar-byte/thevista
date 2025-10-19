@@ -18,11 +18,11 @@ const Fade = ({ children, delay = 0 }) => (
 // Make sure the files exist in /public with the same names.
 const images = [
   { src: "/gallery6.jpg", caption: "The Vista façade — natural stone architecture blending classical symmetry with mountain modern design" },
-  { src: "/gallery7.jpg", caption: "The facade" },
+  { src: "/gallery7.jpg", caption: "Stone and sunlight meet in quiet symmetry" },
   { src: "/gallery8.jpg", caption: "Parking Entry and Driveway" },
-  { src: "/gallery9.jpg", caption: "Lounge" },
-  { src: "/gallery10.jpg", caption: "Modern Kitchen" },
-  { src: "/gallery11.jpg", caption: "Bedroom with a view" },
+  { src: "/gallery9.jpg", caption: "Warm light, quiet evenings, and the mountain skyline beyond your window — comfort with a view" },
+  { src: "/gallery10.jpg", caption: "Clean lines, soft tones, and quiet efficiency — a kitchen made for calm mornings and slow evenings." },
+  { src: "/gallery11.jpg", caption: "Mountain lights outside, quiet comfort within." },
   { src: "/gallery12.jpg", caption: "The dining" },
   { src: "/gallery13.jpg", caption: "The 2nd bedroom" },
   { src: "/gallery14.jpg", caption: "Your private haven" },
