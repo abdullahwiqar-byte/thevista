@@ -156,16 +156,15 @@ export default function App() {
      {/* Hero — fixed viewport height, identical crop across devices */}
 <section
   id="home"
-  className="relative bg-cover bg-center bg-no-repeat text-white h-[70vh] min-h-[560px] max-h-[720px] overflow-hidden"
+  className="relative bg-cover bg-center bg-no-repeat text-white h-[70vh] min-h-[560px] max-h-[720px] overflow-hidden max-w-7xl mx-auto rounded-2xl"
   style={{ backgroundImage: "url('/hero.jpg')" }}
 >
   {/* legibility overlay */}
   <div className="absolute inset-0 bg-black/50" />
 
   {/* fill the hero’s height; no vertical padding */}
-  <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-full">
-    <div className="grid h-full items-center gap-8 lg:grid-cols-[1fr_auto]">
-      
+  <div className="relative px-4 sm:px-6 lg:px-8 h-full">
+  <div className="grid h-full items-center gap-8 lg:grid-cols-[1fr_auto]">
       {/* Left: Title + copy */}
       <div className="z-10">
         <h1 className="text-[clamp(28px,5vw,56px)] font-black tracking-tight drop-shadow-lg">
@@ -456,6 +455,7 @@ export default function App() {
     </div>
   );
 }
+
 
 
 
