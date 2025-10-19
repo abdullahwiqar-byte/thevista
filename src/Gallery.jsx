@@ -117,9 +117,7 @@ export default function Gallery() {
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {images.map((img, i) => (
               <Fade key={i} delay={0.05 * i}>
-                <figure className="relative group overflow-hidden rounded-2xl border border-slate-200 shadow-sm cursor-zoom-in">
-                onClick={() => open(i)}
-      
+                <figure className="relative group overflow-hidden rounded-2xl border border-slate-200 shadow-sm cursor-zoom-in">      
                   <img
                     src={img.src}
                     alt={img.caption}
