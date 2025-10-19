@@ -178,7 +178,6 @@ export default function App() {
         </p>
       </div>
 
-     // Replace the absolute <img /> block in the Hero with this:
   <div className="justify-self-end self-end">
   <img
     src="/logo.png"
@@ -456,6 +455,7 @@ export default function App() {
     </div>
   );
 }
+
 
 
 
