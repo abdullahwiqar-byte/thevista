@@ -248,7 +248,7 @@ export default function App() {
       </section>
 
      {/* Residences */}
-<section id="residences" className="bg-slate-50 border-y border-slate-200">
+<section id="residences" className="scroll-mt-24 bg-slate-50 border-y border-slate-200">
   <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
     {/* Residences Heading */}
     <Fade>
@@ -459,6 +459,7 @@ export default function App() {
     </div>
   );
 }
+
 
 
 
