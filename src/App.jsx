@@ -156,19 +156,42 @@ export default function App() {
       </header>
 
       {/* Hero */}
-        <section
-              id="home"
-              className="relative bg-cover bg-center bg-no-repeat text-white"
-              style={{
-              backgroundImage: "url('/hero.jpg')",
-              }}
-              >
-            <div className="relative bg-black/50 py-24">
-            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          ...
-        </div>
+<section
+  id="home"
+  className="relative bg-cover bg-center bg-no-repeat text-white"
+  style={{
+    backgroundImage: "url('/hero.jpg')", // place hero.jpg in /public
+  }}
+>
+  {/* Dark overlay for readability */}
+  <div className="absolute inset-0 bg-black/50"></div>
+
+  {/* Content Layer */}
+  <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-32 flex flex-col items-start justify-center">
+    {/* Logo and Branding */}
+    <div className="flex flex-col sm:flex-row items-center sm:items-end gap-4">
+      <img
+        src="/logo.png"
+        alt="The Vista logo"
+        className="h-24 w-auto drop-shadow-lg"
+      />
+      <div>
+        <h1 className="text-5xl md:text-6xl font-black tracking-tight drop-shadow-lg">
+          The Vista
+        </h1>
+        <p className="mt-2 text-lg sm:text-xl text-slate-100 drop-shadow-md">
+          Own your peace, in the peaks – Khairagali
+        </p>
       </div>
-  </section>
+    </div>
+
+    {/* Optional subtext */}
+    <p className="mt-8 text-lg sm:text-xl text-slate-200 max-w-2xl drop-shadow-md">
+      72 modern mountain apartments across 12 floors with underground parking, expansive rooftop, and an in-building prayer room.
+    </p>
+  </div>
+</section>
+
 
       {/* Stats */}
       <section className="border-b border-slate-200 bg-slate-50">
@@ -419,6 +442,7 @@ export default function App() {
     </div>
   );
 }
+
 
 
 
