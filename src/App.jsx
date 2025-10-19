@@ -183,7 +183,7 @@ export default function App() {
   src="/logo.png"
   alt="The Vista logo"
   className="
-    absolute right-4 bottom-4
+    absolute right-4 bottom-4 sm:right-6 sm:bottom-6
     w-20                        /* base size for mobile */
     sm:w-28 md:w-36 lg:w-44     /* scales up on bigger screens */
     max-w-[30vw]                /* prevents oversize on huge displays */
@@ -459,6 +459,7 @@ export default function App() {
     </div>
   );
 }
+
 
 
 
