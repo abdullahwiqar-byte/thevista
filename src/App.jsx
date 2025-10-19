@@ -156,7 +156,7 @@ export default function App() {
      {/* Hero — fixed viewport height, identical crop across devices */}
 <section
   id="home"
-  className="relative bg-cover bg-center bg-no-repeat text-white h-[70vh] min-h-[560px] max-h-[720px] overflow-hidden max-w-7xl mx-auto rounded-2xl"
+  className="relative bg-cover bg-center bg-no-repeat text-white h-[70vh] min-h-[560px] max-h-[720px] overflow-hidden max-w-7xl mx-auto rounded-2xl aspect-[16/7] sm:aspect-[16/6]"
   style={{ backgroundImage: "url('/hero.jpg')" }}
 >
   {/* legibility overlay */}
@@ -455,6 +455,7 @@ export default function App() {
     </div>
   );
 }
+
 
 
 
