@@ -178,19 +178,16 @@ export default function App() {
         </p>
       </div>
 
-      {/* Right: Logo (no absolute!) */}
+     // Replace the absolute <img /> block in the Hero with this:
+  <div className="justify-self-end self-end">
   <img
-  src="/logo.png"
-  alt="The Vista logo"
-  className="
-    absolute right-4 bottom-4 sm:right-6 sm:bottom-6
-    w-20                        /* base size for mobile */
-    sm:w-28 md:w-36 lg:w-44     /* scales up on bigger screens */
-    max-w-[30vw]                /* prevents oversize on huge displays */
-    drop-shadow-lg
-    transition-all duration-300 /* smooth resizing */
-  "
-/>
+    src="/logo.png"
+    alt="The Vista logo"
+    className="w-20 sm:w-28 md:w-36 lg:w-44 max-w-[30vw] drop-shadow-lg"
+    loading="eager"
+    decoding="async"
+  />
+</div>
     </div>
   </div>
 </section>
@@ -210,7 +207,7 @@ export default function App() {
       </section>
 
       {/* Location */}
-      <section id="location" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 grid lg:grid-cols-2 gap-10 items-center">
+      <section id="location" className="scroll-mt-24 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 grid lg:grid-cols-2 gap-10 items-center">
         <Fade>
           <div>
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Location</h2>
@@ -308,7 +305,7 @@ export default function App() {
 </section> {/* closes entire residences section */}
 
        {/* Amenities */}
-      <section id="amenities" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
+      <section id="amenities" className="scroll-mt-24 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
         <Fade><h2 className="text-3xl md:text-4xl font-bold tracking-tight">Amenities</h2></Fade>
         <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {HIGHLIGHTS.map((h, i) => (
@@ -323,7 +320,7 @@ export default function App() {
       </section>
 
 {/* Pricing */}
-<section id="pricing" className="bg-slate-900 text-white">
+<section id="pricing" className="scroll-mt-24 bg-slate-900 text-white">
   <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
     <Fade>
       <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Pricing</h2>
@@ -392,7 +389,7 @@ export default function App() {
 
 
       {/* Contact */}
-      <section id="contact" className="bg-slate-50 border-t border-slate-200">
+      <section id="contact" className="scroll-mt-24 bg-slate-50 border-t border-slate-200">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 grid lg:grid-cols-2 gap-10 items-start">
           <Fade>
             <div>
@@ -459,6 +456,7 @@ export default function App() {
     </div>
   );
 }
+
 
 
 
