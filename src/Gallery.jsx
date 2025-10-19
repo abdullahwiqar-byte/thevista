@@ -15,14 +15,48 @@ const Fade = ({ children, delay = 0 }) => (
 
 // Put your actual file names here.
 // Tip: store images in /public/gallery/... and use leading slashes.
-const IMAGES = [
-  "/gallery1.jpg",
-  "/gallery2.jpg",
-  "/gallery3.jpg",
-  "/gallery4.jpg",
-  "/gallery5.jpg",
-  // Add more as needed
+const images = [
+  { src: "/gallery1.jpg", caption: "Elevation Concept — Front Facade" },
+  { src: "/gallery2.jpg", caption: "Main Lobby and Reception" },
+  { src: "/gallery3.jpg", caption: "Lift Lobby — Level 1" },
+  { src: "/gallery4.jpg", caption: "Rooftop Lounge and BBQ Deck" },
+  { src: "/gallery5.jpg", caption: "View from Upper Balcony" },
+  { src: "/gallery6.jpg", caption: "Outdoor Terrace — South Wing" },
+  { src: "/gallery7.jpg", caption: "Evening Façade Illumination" },
+  { src: "/gallery8.jpg", caption: "Parking Entry and Driveway" },
+  { src: "/gallery9.jpg", caption: "Mountain-side Elevation" },
+  { src: "/gallery10.jpg", caption: "Reception Lounge — Interior" },
+  { src: "/gallery11.jpg", caption: "Corridor and Access Lobby" },
+  { src: "/gallery12.jpg", caption: "Apartment Interior — Studio Layout" },
+  { src: "/gallery13.jpg", caption: "One-Bedroom Living Space" },
+  { src: "/gallery14.jpg", caption: "Two-Bedroom Living Area" },
+  { src: "/gallery15.jpg", caption: "Three-Bedroom Family Suite" },
+  { src: "/gallery16.jpg", caption: "Kitchen Finish — Semi-Furnished Option" },
+  { src: "/gallery17.jpg", caption: "Bathroom Fittings — Modern Finish" },
+  { src: "/gallery18.jpg", caption: "View from Rooftop Edge" },
+  { src: "/gallery19.jpg", caption: "Building Rear Access" },
+  { src: "/gallery20.jpg", caption: "Lobby Lighting Details" },
+  { src: "/gallery21.jpg", caption: "Terrace Sitting Area" },
+  { src: "/gallery22.jpg", caption: "Evening Skyline — North View" },
+  { src: "/gallery23.jpg", caption: "Structural Progress Shot" },
+  { src: "/gallery24.jpg", caption: "Sunset View — Western Wing" },
+  { src: "/gallery25.jpg", caption: "CCTV and Access Control" },
+  { src: "/gallery26.jpg", caption: "Rooftop Prayer Area" },
+  { src: "/gallery27.jpg", caption: "Panoramic Valley View" },
+  { src: "/gallery28.jpg", caption: "South Elevation — Completed" },
+  { src: "/gallery29.jpg", caption: "Landscaped Approach Road" },
+  { src: "/gallery30.jpg", caption: "Main Gate and Driveway" },
+  { src: "/gallery31.jpg", caption: "Interior Rendering — Kitchen" },
+  { src: "/gallery32.jpg", caption: "Interior Rendering — Bedroom" },
+  { src: "/gallery33.jpg", caption: "Interior Rendering — Living Room" },
+  { src: "/gallery34.jpg", caption: "Rooftop Edge — Safety Parapets" },
+  { src: "/gallery35.jpg", caption: "Prayer Room Entrance" },
+  { src: "/gallery36.jpg", caption: "Corridor Lighting Fixtures" },
+  { src: "/gallery37.jpg", caption: "Lift Area — Daylight Glazing" },
+  { src: "/gallery38.jpg", caption: "BBQ Zone — Seating Area" },
+  { src: "/gallery39.jpg", caption: "The Vista — Aerial View" },
 ];
+
 
 export default function Gallery() {
   const [open, setOpen] = useState(false);
