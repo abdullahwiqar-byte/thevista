@@ -1,8 +1,9 @@
-import React, { useState, useEffect, useCallback } from "react";
+// src/Gallery.jsx
+import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
-// Fade helper (you already use this pattern in App.jsx)
+// tiny fade helper
 const Fade = ({ children, delay = 0 }) => (
   <motion.div
     initial={{ opacity: 0, y: 12 }}
@@ -13,8 +14,8 @@ const Fade = ({ children, delay = 0 }) => (
   </motion.div>
 );
 
-// Put your actual file names here.
-// Tip: store images in /public/gallery/... and use leading slashes.
+// FULLY CUSTOM CAPTIONS — edit these as you like.
+// Make sure the files exist in /public with the same names.
 const images = [
   { src: "/gallery1.jpg", caption: "Elevation Concept — Front Facade" },
   { src: "/gallery2.jpg", caption: "Main Lobby and Reception" },
@@ -54,31 +55,10 @@ const images = [
   { src: "/gallery36.jpg", caption: "Corridor Lighting Fixtures" },
   { src: "/gallery37.jpg", caption: "Lift Area — Daylight Glazing" },
   { src: "/gallery38.jpg", caption: "BBQ Zone — Seating Area" },
-  { src: "/gallery39.jpg", caption: "The Vista — Aerial View" },
+  { src: "/gallery39.jpg", caption: "The Vista — Aerial View" }
 ];
 
-
 export default function Gallery() {
-  const [open, setOpen] = useState(false);
-  const [index, setIndex] = useState(0);
-
-  const close = useCallback(() => setOpen(false), []);
-  const openAt = useCallback((i) => { setIndex(i); setOpen(true); }, []);
-  const prev = useCallback(() => setIndex((i) => (i - 1 + IMAGES.length) % IMAGES.length), []);
-  const next = useCallback(() => setIndex((i) => (i + 1) % IMAGES.length), []);
-
-  // Keyboard controls for the lightbox
-  useEffect(() => {
-    if (!open) return;
-    const onKey = (e) => {
-      if (e.key === "Escape") close();
-      if (e.key === "ArrowLeft") prev();
-      if (e.key === "ArrowRight") next();
-    };
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, [open, close, prev, next]);
-
   return (
     <section className="min-h-screen bg-slate-50 py-20 text-slate-900">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -87,32 +67,30 @@ export default function Gallery() {
         </Fade>
         <Fade delay={0.05}>
           <p className="mb-10 text-slate-600">
-            Click any image to view full size. Use ← → or Esc to navigate/close.
+            Click any image to view full size. Captions identify spaces and views.
           </p>
         </Fade>
 
-        {/* Grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {IMAGES.map((src, i) => (
-            <Fade key={src} delay={0.04 * i}>
-              <button
-                type="button"
-                onClick={() => openAt(i)}
-                className="block w-full h-64 rounded-2xl overflow-hidden border border-slate-200 bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500"
-                title="Open image"
-              >
-                <img
-                  src={src}
-                  alt={`The Vista view ${i + 1}`}
-                  loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-[1.02]"
-                />
-              </button>
+          {images.map((img, i) => (
+            <Fade key={img.src} delay={0.04 * i}>
+              <figure className="w-full">
+                <a href={img.src} target="_blank" rel="noreferrer">
+                  <img
+                    src={img.src}
+                    alt={img.caption}
+                    loading="lazy"
+                    className="w-full h-64 object-cover rounded-2xl border border-slate-200 bg-white shadow-sm transition-transform duration-300 hover:scale-[1.02]"
+                  />
+                </a>
+                <figcaption className="mt-2 text-xs tracking-wide uppercase text-slate-500 text-center">
+                  {img.caption}
+                </figcaption>
+              </figure>
             </Fade>
           ))}
         </div>
 
-        {/* Back */}
         <div className="mt-12 text-center">
           <Link
             to="/"
@@ -122,60 +100,6 @@ export default function Gallery() {
           </Link>
         </div>
       </div>
-
-      {/* Lightbox */}
-      {open && (
-        <div
-          className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4"
-          onClick={close}
-          role="dialog"
-          aria-modal="true"
-        >
-          <div className="relative max-w-6xl w-full" onClick={(e) => e.stopPropagation()}>
-            <img
-              src={IMAGES[index]}
-              alt={`The Vista full ${index + 1}`}
-              className="w-full max-h-[80vh] object-contain rounded-xl shadow-2xl"
-            />
-
-            {/* Controls */}
-            <button
-              type="button"
-              onClick={close}
-              className="absolute top-3 right-3 px-3 py-1.5 rounded-lg bg-white/90 text-slate-900 text-sm hover:bg-white"
-              aria-label="Close"
-              title="Close (Esc)"
-            >
-              Close ✕
-            </button>
-            {IMAGES.length > 1 && (
-              <>
-                <button
-                  type="button"
-                  onClick={prev}
-                  className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-white/90 p-3 hover:bg-white"
-                  aria-label="Previous"
-                  title="Previous (←)"
-                >
-                  ‹
-                </button>
-                <button
-                  type="button"
-                  onClick={next}
-                  className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-white/90 p-3 hover:bg-white"
-                  aria-label="Next"
-                  title="Next (→)"
-                >
-                  ›
-                </button>
-                <div className="absolute bottom-3 left-1/2 -translate-x-1/2 text-xs text-white/80">
-                  {index + 1} / {IMAGES.length}
-                </div>
-              </>
-            )}
-          </div>
-        </div>
-      )}
     </section>
   );
 }
