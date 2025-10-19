@@ -38,8 +38,8 @@ const NAV = [
   { label: "Residences", href: "#residences" },
   { label: "Amenities", href: "#amenities" },
   { label: "Pricing", href: "#pricing" },
-  { label: "Contact", href: "#contact" },
   { label: "Gallery", href: "/gallery" },
+  { label: "Contact", href: "#contact" },
 ];
 
 const STATS = [
@@ -431,14 +431,15 @@ export default function App() {
             <a href="#location" className="hover:text-slate-900">Location</a>
             <a href="#residences" className="hover:text-slate-900">Residences</a>
             <a href="#pricing" className="hover:text-slate-900">Pricing</a>
-            <a href="#contact" className="hover:text-slate-900">Contact</a>
             <a href="/gallery" className="hover:text-slate-900">Gallery</a>
+            <a href="#contact" className="hover:text-slate-900">Contact</a>
           </div>
         </div>
       </footer>
     </div>
   );
 }
+
 
 
 
