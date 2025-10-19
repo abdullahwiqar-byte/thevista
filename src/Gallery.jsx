@@ -74,21 +74,17 @@ export default function Gallery() {
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {images.map((img, i) => (
             <Fade key={img.src} delay={0.04 * i}>
-              <figure className="w-full">
-                <a href={img.src} target="_blank" rel="noreferrer">
-                  <img
-                    src={img.src}
-                    alt={img.caption}
-                    loading="lazy"
-                    className="w-full h-64 object-cover rounded-2xl border border-slate-200 bg-white shadow-sm transition-transform duration-300 hover:scale-[1.02]"
-                  />
-                </a>
-               <figcaption className="mt-3 text-[12px] tracking-[0.08em] uppercase text-center text-emerald-800 font-semibold bg-emerald-50 py-1 rounded-md shadow-sm">
-                {img.caption}
-              </figcaption>
-
-
-              </figure>
+         <figure className="relative group overflow-hidden rounded-2xl border border-slate-200 shadow-sm">
+  <img
+    src={img.src}
+    alt={img.caption}
+    loading="lazy"
+    className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+  />
+  <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent text-white text-sm p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+    {img.caption}
+  </figcaption>
+</figure>
             </Fade>
           ))}
         </div>
