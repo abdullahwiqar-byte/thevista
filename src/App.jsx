@@ -179,11 +179,18 @@ export default function App() {
       </div>
 
       {/* Right: Logo (no absolute!) */}
-      <img
-        src="/logo.png"
-        alt="The Vista logo"
-        className="justify-self-end w-24 sm:w-28 md:w-36 lg:w-44 xl:w-52 drop-shadow-lg pointer-events-none"
-      />
+  <img
+  src="/logo.png"
+  alt="The Vista logo"
+  className="
+    absolute right-4 bottom-4
+    w-20                        /* base size for mobile */
+    sm:w-28 md:w-36 lg:w-44     /* scales up on bigger screens */
+    max-w-[30vw]                /* prevents oversize on huge displays */
+    drop-shadow-lg
+    transition-all duration-300 /* smooth resizing */
+  "
+/>
     </div>
   </div>
 </section>
@@ -452,6 +459,7 @@ export default function App() {
     </div>
   );
 }
+
 
 
 
