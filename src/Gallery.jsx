@@ -24,7 +24,7 @@ const images = [
   { src: "/gallery10.jpg", caption: "Clean lines, soft tones, and quiet efficiency — a kitchen made for calm mornings and slow evenings." },
   { src: "/gallery11.jpg", caption: "Mountain lights outside, quiet comfort within." },
   { src: "/gallery12.jpg", caption: "Modern elegance meets natural warmth — a space designed for calm and connection." },
-  { src: "/gallery13.jpg", caption: "The 2nd bedroom" },
+  { src: "/gallery13.jpg", caption: "Textured stone, soft light, and muted tones — a bedroom made for effortless calm." },
   { src: "/gallery14.jpg", caption: "Your private haven" },
   { src: "/gallery15.jpg", caption: "Two-Bedroom Living space" },
   { src: "/gallery16.jpg", caption: "A hallway" },
@@ -86,23 +86,27 @@ export default function Gallery() {
         <Fade delay={0.05}><p className="mb-10 text-slate-600">Click any image to view full size.</p></Fade>
 
         {/* Grid */}
-     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
   {images.map((img, i) => (
     <Fade key={i} delay={0.05 * i}>
-      <figure className="relative group overflow-hidden rounded-2xl border border-slate-200 shadow-sm">
+      <figure
+        className="relative group overflow-hidden rounded-2xl border border-slate-200 shadow-sm cursor-zoom-in"
+        onClick={() => open(i)} // 👈 This triggers the lightbox
+      >
         <img
           src={img.src}
           alt={img.caption}
           loading="lazy"
           className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
         />
-        <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent text-white text-sm p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent text-white text-[13px] tracking-wide font-medium p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 backdrop-blur-sm">
           {img.caption}
         </figcaption>
       </figure>
     </Fade>
   ))}
 </div>
+
 
 
         <div className="mt-12 text-center">
