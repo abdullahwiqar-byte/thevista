@@ -153,50 +153,44 @@ export default function App() {
         </div>
       </header>
 
-      {/* Hero */}
-
-      {/* Hero */}
+     {/* Hero — fixed viewport height, identical crop across devices */}
 <section
   id="home"
-  className="relative bg-cover bg-center bg-no-repeat text-white"
+  className="relative bg-cover bg-center bg-no-repeat text-white h-[70vh] min-h-[560px] max-h-[720px] overflow-hidden"
   style={{ backgroundImage: "url('/hero.jpg')" }}
 >
+  {/* legibility overlay */}
   <div className="absolute inset-0 bg-black/50" />
 
-  <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-28 md:py-32">
-    {/* grid keeps logo aligned with text */}
-    <div className="grid items-start gap-8 lg:grid-cols-[1fr_auto]">
-      {/* Left: Title + Tagline + Summary */}
-      <div>
-        <h1 className="text-5xl md:text-6xl font-black tracking-tight drop-shadow-lg">
+  {/* fill the hero’s height; no vertical padding */}
+  <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-full">
+    <div className="grid h-full items-center gap-8 lg:grid-cols-[1fr_auto]">
+      
+      {/* Left: Title + copy */}
+      <div className="z-10">
+        <h1 className="text-[clamp(28px,5vw,56px)] font-black tracking-tight drop-shadow-lg">
           The Vista
         </h1>
-        <p className="mt-3 text-lg sm:text-xl text-slate-100 drop-shadow-md">
+        <p className="mt-3 text-[clamp(14px,2.2vw,20px)] text-slate-100 drop-shadow-md">
           Own your peace, in the peaks – Khairagali
         </p>
-        <p className="mt-8 text-lg sm:text-xl text-slate-200 max-w-2xl drop-shadow-md">
+        <p className="mt-6 text-[clamp(14px,2vw,18px)] text-slate-200 max-w-2xl drop-shadow-md">
           72 modern mountain apartments across 12 floors with underground parking,
           expansive rooftop, and an in-building prayer room.
         </p>
       </div>
 
-      {/* Right: Logo (no absolute!) */}
-      <img
-        src="/logo.png"
-        alt="The Vista logo"
-        className="
-          absolute right-4 bottom-4 sm:right-6 sm:bottom-6
-          w-20                        /* base size for mobile */
-          sm:w-28 md:w-36 lg:w-44     /* scales up on bigger screens */
-          max-w-[30vw]                /* prevents oversize on huge displays */
-          drop-shadow-lg
-          transition-all duration-300 /* smooth resizing */
-        "
-      />
+      {/* Right: Logo inside layout, not absolutely positioned */}
+      <div className="z-10 justify-self-end self-center">
+        <img
+          src="/logo.png"
+          alt="The Vista logo"
+          className="w-[clamp(80px,14vw,176px)] drop-shadow-lg"
+        />
+      </div>
     </div>
   </div>
 </section>
-
 
       {/* Stats */}
       <section className="border-b border-slate-200 bg-slate-50">
@@ -462,6 +456,7 @@ export default function App() {
     </div>
   );
 }
+
 
 
 
