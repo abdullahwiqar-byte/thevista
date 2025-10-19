@@ -135,20 +135,17 @@ export default function App() {
               <div className="text-xs text-slate-500 -mt-0.5">{BRAND.tagline}</div>
             </div>
           </a>
-         <nav className="flex items-center gap-4 md:gap-8 text-sm flex-wrap">
-         {NAV.map(n => {
-        const isRoute = n.href.startsWith("/"); // e.g. "/gallery"
-        return isRoute ? (
-        <Link key={n.href} to={n.href} className="shrink-0 text-slate-600 hover:text-slate-900">
-          {n.label}
-          </Link>
-          ) : (
-          <a key={n.href} href={n.href} className="shrink-0 text-slate-600 hover:text-slate-900">
-            {n.label}
-          </a>
-          );
-        })}
-    </nav>
+    <nav className="flex items-center gap-4 md:gap-8 text-sm flex-nowrap overflow-x-auto scrollbar-none [-webkit-overflow-scrolling:touch]">
+  {NAV.map(n => (
+    <a
+      key={n.href}
+      href={n.href}
+      className="shrink-0 text-slate-600 hover:text-slate-900 py-1"
+    >
+      {n.label}
+    </a>
+  ))}
+</nav>
             <a href="#contact" className={`hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-xl text-white ${BRAND.accent} shadow-sm hover:opacity-90`}>
             <ArrowRight className="h-4 w-4" /> Register Interest
           </a>
@@ -171,10 +168,10 @@ export default function App() {
     {/* Logo and Branding */}
     <div className="flex flex-col sm:flex-row items-center sm:items-end gap-4">
       <img
-        src="/logo.png"
-        alt="The Vista logo"
-        className="h-24 w-auto drop-shadow-lg"
-      />
+  src="/logo.png"
+  alt="The Vista logo"
+  className="absolute right-4 top-6 h-20 w-auto sm:h-24 md:h-36 lg:h-48 drop-shadow-lg transition-all duration-300"
+/>
       <div>
         <h1 className="text-5xl md:text-6xl font-black tracking-tight drop-shadow-lg">
           The Vista
@@ -442,6 +439,7 @@ export default function App() {
     </div>
   );
 }
+
 
 
 
