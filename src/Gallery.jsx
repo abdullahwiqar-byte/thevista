@@ -1,9 +1,8 @@
 // src/Gallery.jsx
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
-// tiny fade helper
 const Fade = ({ children, delay = 0 }) => (
   <motion.div
     initial={{ opacity: 0, y: 12 }}
@@ -14,6 +13,7 @@ const Fade = ({ children, delay = 0 }) => (
   </motion.div>
 );
 
+// your images + captions (sample)
 // FULLY CUSTOM CAPTIONS — edit these as you like.
 // Make sure the files exist in /public with the same names.
 const images = [
@@ -54,45 +54,111 @@ const images = [
 ];
 
 export default function Gallery() {
+  const [index, setIndex] = useState(null); // null = closed, number = open on that image
+
+  const open = (i) => setIndex(i);
+  const close = () => setIndex(null);
+  const prev = (e) => {
+    e?.stopPropagation();
+    setIndex((i) => (i === 0 ? images.length - 1 : i - 1));
+  };
+  const next = (e) => {
+    e?.stopPropagation();
+    setIndex((i) => (i === images.length - 1 ? 0 : i + 1));
+  };
+
+  // keyboard: Esc/←/→
+  useEffect(() => {
+    const onKey = (e) => {
+      if (index === null) return;
+      if (e.key === "Escape") close();
+      if (e.key === "ArrowLeft") prev();
+      if (e.key === "ArrowRight") next();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [index]);
+
   return (
     <section className="min-h-screen bg-slate-50 py-20 text-slate-900">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <Fade>
-          <h1 className="text-4xl font-bold tracking-tight mb-3">Image Gallery</h1>
-        </Fade>
-        <Fade delay={0.05}>
-          <p className="mb-10 text-slate-600">
-            Click any image to view full size. Captions identify spaces and views.
-          </p>
-        </Fade>
+        <Fade><h1 className="text-4xl font-bold tracking-tight mb-3">Image Gallery</h1></Fade>
+        <Fade delay={0.05}><p className="mb-10 text-slate-600">Click any image to view full size.</p></Fade>
 
+        {/* Grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {images.map((img, i) => (
             <Fade key={img.src} delay={0.04 * i}>
-         <figure className="relative group overflow-hidden rounded-2xl border border-slate-200 shadow-sm">
-  <img
-    src={img.src}
-    alt={img.caption}
-    loading="lazy"
-    className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
-  />
-  <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent text-white text-sm p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-    {img.caption}
-  </figcaption>
-</figure>
+              <figure
+                className="relative group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm cursor-zoom-in"
+                onClick={() => open(i)}
+              >
+                <img
+                  src={img.src}
+                  alt={img.caption}
+                  loading="lazy"
+                  className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                />
+                <figcaption className="mt-3 text-[12px] tracking-[0.08em] uppercase text-center text-emerald-800 font-semibold bg-emerald-50 py-1 rounded-md mx-3 mb-3">
+                  {img.caption}
+                </figcaption>
+              </figure>
             </Fade>
           ))}
         </div>
 
         <div className="mt-12 text-center">
-          <Link
-            to="/"
-            className="inline-block px-6 py-3 bg-emerald-600 text-white rounded-xl hover:bg-emerald-700"
-          >
+          <Link to="/" className="inline-block px-6 py-3 bg-emerald-600 text-white rounded-xl hover:bg-emerald-700">
             ← Back to Home
           </Link>
         </div>
       </div>
+
+      {/* Lightbox */}
+      {index !== null && (
+        <div
+          className="fixed inset-0 z-50 bg-black/90 backdrop-blur-sm flex items-center justify-center"
+          onClick={close}
+        >
+          {/* Close button */}
+          <button
+            onClick={close}
+            className="absolute top-4 right-4 h-10 w-10 rounded-full bg-white/10 hover:bg-white/20 text-white text-xl"
+            aria-label="Close"
+          >
+            ×
+          </button>
+
+          {/* Prev / Next */}
+          <button
+            onClick={prev}
+            className="absolute left-4 md:left-6 top-1/2 -translate-y-1/2 h-11 w-11 rounded-full bg-white/10 hover:bg-white/20 text-white text-2xl"
+            aria-label="Previous"
+          >
+            ‹
+          </button>
+          <button
+            onClick={next}
+            className="absolute right-4 md:right-6 top-1/2 -translate-y-1/2 h-11 w-11 rounded-full bg-white/10 hover:bg-white/20 text-white text-2xl"
+            aria-label="Next"
+          >
+            ›
+          </button>
+
+          {/* Image + caption */}
+          <div className="max-w-6xl w-[92vw]">
+            <img
+              src={images[index].src}
+              alt={images[index].caption}
+              className="w-full max-h-[80vh] object-contain select-none"
+              onClick={(e) => e.stopPropagation()}
+            />
+            <div className="mt-4 text-center text-slate-200 text-sm">
+              {images[index].caption}
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
