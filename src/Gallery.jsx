@@ -53,113 +53,56 @@ const images = [
 ];
 
 export default function Gallery() {
-  const [index, setIndex] = useState(null); // null = closed, number = open on that image
-
-  const open = (i) => setIndex(i);
-  const close = () => setIndex(null);
-  const prev = (e) => {
-    e?.stopPropagation();
-    setIndex((i) => (i === 0 ? images.length - 1 : i - 1));
-  };
-  const next = (e) => {
-    e?.stopPropagation();
-    setIndex((i) => (i === images.length - 1 ? 0 : i + 1));
-  };
-
-  // keyboard: Esc/←/→
-  useEffect(() => {
-    const onKey = (e) => {
-      if (index === null) return;
-      if (e.key === "Escape") close();
-      if (e.key === "ArrowLeft") prev();
-      if (e.key === "ArrowRight") next();
-    };
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, [index]);
+  const images = [
+    { src: "/gallery6.jpg", caption: "The Vista façade — natural stone architecture blending classical symmetry with mountain modern design." },
+    { src: "/gallery7.jpg", caption: "Open-plan dining and living — minimalist elegance with warm wooden tones." },
+    // ... continue your other image/caption pairs here
+  ];
 
   return (
-    <section className="min-h-screen bg-slate-50 py-20 text-slate-900">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <Fade><h1 className="text-4xl font-bold tracking-tight mb-3">Image Gallery</h1></Fade>
-        <Fade delay={0.05}><p className="mb-10 text-slate-600">Click any image to view full size.</p></Fade>
-
-        {/* Grid */}
-<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-  {images.map((img, i) => (
-    <Fade key={i} delay={0.05 * i}>
-      <figure
-        className="relative group overflow-hidden rounded-2xl border border-slate-200 shadow-sm cursor-zoom-in"
-        onClick={() => open(i)} // 👈 This triggers the lightbox
+    <>
+      {/* Hero section with background image and overlay */}
+      <section
+        className="relative h-[40vh] md:h-[50vh] flex items-center justify-center text-center text-white overflow-hidden"
       >
         <img
-          src={img.src}
-          alt={img.caption}
-          loading="lazy"
-          className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+          src="/gallery-hero.jpg" // 👈 your chosen banner image (place in /public)
+          alt="The Vista gallery hero"
+          className="absolute inset-0 w-full h-full object-cover brightness-50"
         />
-        <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent text-white text-[13px] tracking-wide font-medium p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 backdrop-blur-sm">
-          {img.caption}
-        </figcaption>
-      </figure>
-    </Fade>
-  ))}
-</div>
-
-
-
-        <div className="mt-12 text-center">
-          <Link to="/" className="inline-block px-6 py-3 bg-emerald-600 text-white rounded-xl hover:bg-emerald-700">
-            ← Back to Home
-          </Link>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+        <div className="relative z-10 px-4">
+          <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight drop-shadow-lg">
+            Image Gallery
+          </h1>
+          <p className="mt-4 text-lg md:text-xl text-slate-100 max-w-2xl mx-auto drop-shadow">
+            A visual journey through <span className="font-semibold text-emerald-300">The Vista</span> —  
+            where architecture meets mountain serenity.
+          </p>
         </div>
-      </div>
+      </section>
 
-      {/* Lightbox */}
-      {index !== null && (
-        <div
-          className="fixed inset-0 z-50 bg-black/90 backdrop-blur-sm flex items-center justify-center"
-          onClick={close}
-        >
-          {/* Close button */}
-          <button
-            onClick={close}
-            className="absolute top-4 right-4 h-10 w-10 rounded-full bg-white/10 hover:bg-white/20 text-white text-xl"
-            aria-label="Close"
-          >
-            ×
-          </button>
-
-          {/* Prev / Next */}
-          <button
-            onClick={prev}
-            className="absolute left-4 md:left-6 top-1/2 -translate-y-1/2 h-11 w-11 rounded-full bg-white/10 hover:bg-white/20 text-white text-2xl"
-            aria-label="Previous"
-          >
-            ‹
-          </button>
-          <button
-            onClick={next}
-            className="absolute right-4 md:right-6 top-1/2 -translate-y-1/2 h-11 w-11 rounded-full bg-white/10 hover:bg-white/20 text-white text-2xl"
-            aria-label="Next"
-          >
-            ›
-          </button>
-
-          {/* Image + caption */}
-          <div className="max-w-6xl w-[92vw]">
-            <img
-              src={images[index].src}
-              alt={images[index].caption}
-              className="w-full max-h-[80vh] object-contain select-none"
-              onClick={(e) => e.stopPropagation()}
-            />
-            <div className="mt-4 text-center text-slate-200 text-sm">
-              {images[index].caption}
-            </div>
+      {/* Actual Gallery Grid below */}
+      <section className="bg-slate-50 py-16 md:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {images.map((img, i) => (
+              <Fade key={i} delay={0.05 * i}>
+                <figure className="relative group overflow-hidden rounded-2xl border border-slate-200 shadow-sm cursor-zoom-in">
+                  <img
+                    src={img.src}
+                    alt={img.caption}
+                    className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                  <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent text-white text-sm p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500 backdrop-blur-sm">
+                    {img.caption}
+                  </figcaption>
+                </figure>
+              </Fade>
+            ))}
           </div>
         </div>
-      )}
-    </section>
+      </section>
+    </>
   );
 }
