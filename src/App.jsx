@@ -27,7 +27,7 @@ const BRAND = {
   name: "The Vista",
   tagline: "Own your peace, in the peaks - Khairagali",
   primary: "from-[#2C5530] to-[#618264]",
-  accent: "bg-emerald-600",
+  accent: "bg-[#2C5530]",
   email: "info@thevista.pk",
   phone: "+92 332 893 6966",
   address: "Khairagali, Galiyat Region, Pakistan",
@@ -452,6 +452,7 @@ export default function App() {
     </div>
   );
 }
+
 
 
 
