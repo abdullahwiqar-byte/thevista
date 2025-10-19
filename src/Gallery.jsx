@@ -23,7 +23,7 @@ const images = [
   { src: "/gallery9.jpg", caption: "Warm light, quiet evenings, and the mountain skyline beyond your window — comfort with a view" },
   { src: "/gallery10.jpg", caption: "Clean lines, soft tones, and quiet efficiency — a kitchen made for calm mornings and slow evenings." },
   { src: "/gallery11.jpg", caption: "Mountain lights outside, quiet comfort within." },
-  { src: "/gallery12.jpg", caption: "The dining" },
+  { src: "/gallery12.jpg", caption: "Modern elegance meets natural warmth — a space designed for calm and connection." },
   { src: "/gallery13.jpg", caption: "The 2nd bedroom" },
   { src: "/gallery14.jpg", caption: "Your private haven" },
   { src: "/gallery15.jpg", caption: "Two-Bedroom Living space" },
@@ -86,26 +86,24 @@ export default function Gallery() {
         <Fade delay={0.05}><p className="mb-10 text-slate-600">Click any image to view full size.</p></Fade>
 
         {/* Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {images.map((img, i) => (
-            <Fade key={img.src} delay={0.04 * i}>
-              <figure
-                className="relative group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm cursor-zoom-in"
-                onClick={() => open(i)}
-              >
-                <img
-                  src={img.src}
-                  alt={img.caption}
-                  loading="lazy"
-                  className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-[1.02]"
-                />
-                <figcaption className="mt-3 text-[12px] tracking-[0.08em] uppercase text-center text-emerald-800 font-semibold bg-emerald-50 py-1 rounded-md mx-3 mb-3">
-                  {img.caption}
-                </figcaption>
-              </figure>
-            </Fade>
-          ))}
-        </div>
+     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+  {images.map((img, i) => (
+    <Fade key={i} delay={0.05 * i}>
+      <figure className="relative group overflow-hidden rounded-2xl border border-slate-200 shadow-sm">
+        <img
+          src={img.src}
+          alt={img.caption}
+          loading="lazy"
+          className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+        />
+        <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent text-white text-sm p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          {img.caption}
+        </figcaption>
+      </figure>
+    </Fade>
+  ))}
+</div>
+
 
         <div className="mt-12 text-center">
           <Link to="/" className="inline-block px-6 py-3 bg-emerald-600 text-white rounded-xl hover:bg-emerald-700">
