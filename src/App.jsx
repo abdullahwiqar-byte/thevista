@@ -157,39 +157,36 @@ export default function App() {
 <section
   id="home"
   className="relative bg-cover bg-center bg-no-repeat text-white"
-  style={{
-    backgroundImage: "url('/hero.jpg')", // place hero.jpg in /public
-  }}
+  style={{ backgroundImage: "url('/hero.jpg')" }}
 >
-  {/* Dark overlay for readability */}
-  <div className="absolute inset-0 bg-black/50"></div>
+  <div className="absolute inset-0 bg-black/50" />
 
-  {/* Content Layer */}
-  <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-32 flex flex-col items-start justify-center">
-    {/* Logo and Branding */}
-    <div className="flex flex-col sm:flex-row items-center sm:items-end gap-4">
-      <img
-  src="/logo.png"
-  alt="The Vista logo"
-  className="absolute right-4 top-6 h-20 w-auto sm:h-24 md:h-36 lg:h-48 drop-shadow-lg transition-all duration-300"
-/>
+  <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-28 md:py-32">
+    {/* grid keeps logo aligned with text */}
+    <div className="grid items-start gap-8 lg:grid-cols-[1fr_auto]">
+      {/* Left: Title + Tagline + Summary */}
       <div>
         <h1 className="text-5xl md:text-6xl font-black tracking-tight drop-shadow-lg">
           The Vista
         </h1>
-        <p className="mt-2 text-lg sm:text-xl text-slate-100 drop-shadow-md">
+        <p className="mt-3 text-lg sm:text-xl text-slate-100 drop-shadow-md">
           Own your peace, in the peaks – Khairagali
         </p>
+        <p className="mt-8 text-lg sm:text-xl text-slate-200 max-w-2xl drop-shadow-md">
+          72 modern mountain apartments across 12 floors with underground parking,
+          expansive rooftop, and an in-building prayer room.
+        </p>
       </div>
-    </div>
 
-    {/* Optional subtext */}
-    <p className="mt-8 text-lg sm:text-xl text-slate-200 max-w-2xl drop-shadow-md">
-      72 modern mountain apartments across 12 floors with underground parking, expansive rooftop, and an in-building prayer room.
-    </p>
+      {/* Right: Logo (no absolute!) */}
+      <img
+        src="/logo.png"
+        alt="The Vista logo"
+        className="justify-self-end w-24 sm:w-28 md:w-36 lg:w-44 xl:w-52 drop-shadow-lg pointer-events-none"
+      />
+    </div>
   </div>
 </section>
-
 
       {/* Stats */}
       <section className="border-b border-slate-200 bg-slate-50">
@@ -455,6 +452,7 @@ export default function App() {
     </div>
   );
 }
+
 
 
 
