@@ -17,7 +17,7 @@ const Fade = ({ children, delay = 0 }) => (
 // FULLY CUSTOM CAPTIONS — edit these as you like.
 // Make sure the files exist in /public with the same names.
 const images = [
-  { src: "/gallery1.jpg", caption: "Elevation Concept — Front Facade" },
+  { src: "/gallery1.jpg", caption: "The Khairagali view" },
   { src: "/gallery2.jpg", caption: "Main Lobby and Reception" },
   { src: "/gallery3.jpg", caption: "Lift Lobby — Level 1" },
   { src: "/gallery4.jpg", caption: "Rooftop Lounge and BBQ Deck" },
